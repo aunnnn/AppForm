@@ -25,9 +25,8 @@ class ViewController: FormViewController {
             let register = FormRow(tag: "register", cellSource: CellSource.CenteredButton)
             register.value = "Register"
             
-            let spc8 = FormRow(tag: "spc8", cellSource: CellSource.Spacing)
-            spc8.cellLayoutConfiguration.estimatedRowHeight = 8
-            spc8.cellLayoutConfiguration.rowHeight = 8
+            let spc8 = FormRow.spacing(height: 8)
+            let spc10 = FormRow.spacing(height: 10)
             
             let rows = [
                 Styles.CenteredTextLabel.on(row: lb),
@@ -44,15 +43,19 @@ class ViewController: FormViewController {
                 Styles.RegisterButton.on(row: register),
                 spc8,
                 Styles.UsernameTextField.on(row: usr),
+                spc10,
+                Styles.UsernameTextField.on(row: usr),
+                spc10,
+                Styles.UsernameTextField.on(row: usr),
             ]
             
             return rows
         })
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.tableView.tableFooterView = UIView(frame: .zero)
-//        self.tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        self.tableView.layoutIfNeeded()
+        let realHeight = self.tableView.contentSize.height
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +70,6 @@ class ViewController: FormViewController {
     private func centerTableView(viewSize: CGSize) {
         let tableInset = (viewSize.height - self.tableView.contentSize.height)/2
         if tableInset < 0 { return }
-        return
         let inset = UIEdgeInsets(top: tableInset, left: 0, bottom: tableInset, right: 0)
         self.tableView.contentInset = inset
     }

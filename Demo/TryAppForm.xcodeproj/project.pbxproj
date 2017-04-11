@@ -11,15 +11,30 @@
 		30D5BA5C1E9D555E00351FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA4E1E9D555E00351FE5 /* Assets.xcassets */; };
 		30D5BA5D1E9D555E00351FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA4F1E9D555E00351FE5 /* LaunchScreen.storyboard */; };
 		30D5BA5E1E9D555E00351FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA511E9D555E00351FE5 /* Main.storyboard */; };
-		30D5BA5F1E9D555E00351FE5 /* CenteredButtonFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA531E9D555E00351FE5 /* CenteredButtonFormCell.swift */; };
-		30D5BA601E9D555E00351FE5 /* CenteredButtonFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA541E9D555E00351FE5 /* CenteredButtonFormCell.xib */; };
-		30D5BA621E9D555E00351FE5 /* LabelFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA561E9D555E00351FE5 /* LabelFormCell.swift */; };
-		30D5BA631E9D555E00351FE5 /* LabelFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA571E9D555E00351FE5 /* LabelFormCell.xib */; };
-		30D5BA641E9D555E00351FE5 /* TextFieldFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA581E9D555E00351FE5 /* TextFieldFormCell.swift */; };
-		30D5BA651E9D555E00351FE5 /* TextFieldFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA591E9D555E00351FE5 /* TextFieldFormCell.xib */; };
 		30D5BA661E9D555E00351FE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA5A1E9D555E00351FE5 /* ViewController.swift */; };
-		30D5BA691E9D566E00351FE5 /* AppForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D5BA681E9D566E00351FE5 /* AppForm.framework */; };
+		30D5BA6F1E9D583C00351FE5 /* AppForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D5BA6E1E9D583C00351FE5 /* AppForm.framework */; };
+		30D5BA701E9D583C00351FE5 /* AppForm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D5BA6E1E9D583C00351FE5 /* AppForm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30D5BA781E9D5A3700351FE5 /* CenteredButtonFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA721E9D5A3700351FE5 /* CenteredButtonFormCell.swift */; };
+		30D5BA791E9D5A3700351FE5 /* CenteredButtonFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA731E9D5A3700351FE5 /* CenteredButtonFormCell.xib */; };
+		30D5BA7A1E9D5A3700351FE5 /* LabelFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA741E9D5A3700351FE5 /* LabelFormCell.swift */; };
+		30D5BA7B1E9D5A3700351FE5 /* LabelFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA751E9D5A3700351FE5 /* LabelFormCell.xib */; };
+		30D5BA7C1E9D5A3700351FE5 /* TextFieldFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA761E9D5A3700351FE5 /* TextFieldFormCell.swift */; };
+		30D5BA7D1E9D5A3700351FE5 /* TextFieldFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA771E9D5A3700351FE5 /* TextFieldFormCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30D5BA6D1E9D582100351FE5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30D5BA701E9D583C00351FE5 /* AppForm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		302B71DC1E9B8EAA000672C0 /* TryAppForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryAppForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,18 +42,15 @@
 		30D5BA4E1E9D555E00351FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D5BA501E9D555E00351FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30D5BA521E9D555E00351FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		30D5BA531E9D555E00351FE5 /* CenteredButtonFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredButtonFormCell.swift; sourceTree = "<group>"; };
-		30D5BA541E9D555E00351FE5 /* CenteredButtonFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenteredButtonFormCell.xib; sourceTree = "<group>"; };
 		30D5BA551E9D555E00351FE5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30D5BA561E9D555E00351FE5 /* LabelFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelFormCell.swift; sourceTree = "<group>"; };
-		30D5BA571E9D555E00351FE5 /* LabelFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelFormCell.xib; sourceTree = "<group>"; };
-		30D5BA581E9D555E00351FE5 /* TextFieldFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldFormCell.swift; sourceTree = "<group>"; };
-		30D5BA591E9D555E00351FE5 /* TextFieldFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldFormCell.xib; sourceTree = "<group>"; };
 		30D5BA5A1E9D555E00351FE5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		30D5BA681E9D566E00351FE5 /* AppForm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppForm.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/AppForm-ewiypzorkywblahjxmehvdkoctus/Build/Products/Debug-iphonesimulator/AppForm.framework"; sourceTree = "<group>"; };
-		4368902F285C839A59D166E4 /* Pods-TryAppFormPod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryAppFormPod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TryAppFormPod/Pods-TryAppFormPod.debug.xcconfig"; sourceTree = "<group>"; };
-		6638D104C406DDAACE532659 /* Pods_TryAppFormPod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TryAppFormPod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BC50A56D1824D8708640ACE /* Pods-TryAppFormPod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryAppFormPod.release.xcconfig"; path = "Pods/Target Support Files/Pods-TryAppFormPod/Pods-TryAppFormPod.release.xcconfig"; sourceTree = "<group>"; };
+		30D5BA6E1E9D583C00351FE5 /* AppForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D5BA721E9D5A3700351FE5 /* CenteredButtonFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredButtonFormCell.swift; sourceTree = "<group>"; };
+		30D5BA731E9D5A3700351FE5 /* CenteredButtonFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenteredButtonFormCell.xib; sourceTree = "<group>"; };
+		30D5BA741E9D5A3700351FE5 /* LabelFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelFormCell.swift; sourceTree = "<group>"; };
+		30D5BA751E9D5A3700351FE5 /* LabelFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelFormCell.xib; sourceTree = "<group>"; };
+		30D5BA761E9D5A3700351FE5 /* TextFieldFormCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldFormCell.swift; sourceTree = "<group>"; };
+		30D5BA771E9D5A3700351FE5 /* TextFieldFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldFormCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30D5BA691E9D566E00351FE5 /* AppForm.framework in Frameworks */,
+				30D5BA6F1E9D583C00351FE5 /* AppForm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,10 +68,9 @@
 		302B71D31E9B8EAA000672C0 = {
 			isa = PBXGroup;
 			children = (
+				30D5BA6E1E9D583C00351FE5 /* AppForm.framework */,
 				30D5BA4C1E9D555E00351FE5 /* TryAppForm */,
 				302B71DD1E9B8EAA000672C0 /* Products */,
-				C09B1CA0346159ACAFBF0843 /* Pods */,
-				41268339DEF9DC1E8932764A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,34 +89,24 @@
 				30D5BA4E1E9D555E00351FE5 /* Assets.xcassets */,
 				30D5BA4F1E9D555E00351FE5 /* LaunchScreen.storyboard */,
 				30D5BA511E9D555E00351FE5 /* Main.storyboard */,
-				30D5BA531E9D555E00351FE5 /* CenteredButtonFormCell.swift */,
-				30D5BA541E9D555E00351FE5 /* CenteredButtonFormCell.xib */,
+				30D5BA711E9D5A3700351FE5 /* Cells */,
 				30D5BA551E9D555E00351FE5 /* Info.plist */,
-				30D5BA561E9D555E00351FE5 /* LabelFormCell.swift */,
-				30D5BA571E9D555E00351FE5 /* LabelFormCell.xib */,
-				30D5BA581E9D555E00351FE5 /* TextFieldFormCell.swift */,
-				30D5BA591E9D555E00351FE5 /* TextFieldFormCell.xib */,
 				30D5BA5A1E9D555E00351FE5 /* ViewController.swift */,
 			);
 			path = TryAppForm;
 			sourceTree = "<group>";
 		};
-		41268339DEF9DC1E8932764A /* Frameworks */ = {
+		30D5BA711E9D5A3700351FE5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				30D5BA681E9D566E00351FE5 /* AppForm.framework */,
-				6638D104C406DDAACE532659 /* Pods_TryAppFormPod.framework */,
+				30D5BA721E9D5A3700351FE5 /* CenteredButtonFormCell.swift */,
+				30D5BA731E9D5A3700351FE5 /* CenteredButtonFormCell.xib */,
+				30D5BA741E9D5A3700351FE5 /* LabelFormCell.swift */,
+				30D5BA751E9D5A3700351FE5 /* LabelFormCell.xib */,
+				30D5BA761E9D5A3700351FE5 /* TextFieldFormCell.swift */,
+				30D5BA771E9D5A3700351FE5 /* TextFieldFormCell.xib */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C09B1CA0346159ACAFBF0843 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4368902F285C839A59D166E4 /* Pods-TryAppFormPod.debug.xcconfig */,
-				6BC50A56D1824D8708640ACE /* Pods-TryAppFormPod.release.xcconfig */,
-			);
-			name = Pods;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +119,7 @@
 				302B71D81E9B8EAA000672C0 /* Sources */,
 				302B71D91E9B8EAA000672C0 /* Frameworks */,
 				302B71DA1E9B8EAA000672C0 /* Resources */,
+				30D5BA6D1E9D582100351FE5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,10 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D5BA5E1E9D555E00351FE5 /* Main.storyboard in Resources */,
-				30D5BA601E9D555E00351FE5 /* CenteredButtonFormCell.xib in Resources */,
 				30D5BA5C1E9D555E00351FE5 /* Assets.xcassets in Resources */,
-				30D5BA651E9D555E00351FE5 /* TextFieldFormCell.xib in Resources */,
-				30D5BA631E9D555E00351FE5 /* LabelFormCell.xib in Resources */,
+				30D5BA791E9D5A3700351FE5 /* CenteredButtonFormCell.xib in Resources */,
+				30D5BA7B1E9D5A3700351FE5 /* LabelFormCell.xib in Resources */,
+				30D5BA7D1E9D5A3700351FE5 /* TextFieldFormCell.xib in Resources */,
 				30D5BA5D1E9D555E00351FE5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,10 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D5BA661E9D555E00351FE5 /* ViewController.swift in Sources */,
-				30D5BA621E9D555E00351FE5 /* LabelFormCell.swift in Sources */,
 				30D5BA5B1E9D555E00351FE5 /* AppDelegate.swift in Sources */,
-				30D5BA5F1E9D555E00351FE5 /* CenteredButtonFormCell.swift in Sources */,
-				30D5BA641E9D555E00351FE5 /* TextFieldFormCell.swift in Sources */,
+				30D5BA781E9D5A3700351FE5 /* CenteredButtonFormCell.swift in Sources */,
+				30D5BA7A1E9D5A3700351FE5 /* LabelFormCell.swift in Sources */,
+				30D5BA7C1E9D5A3700351FE5 /* TextFieldFormCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
