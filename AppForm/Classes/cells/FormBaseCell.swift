@@ -73,8 +73,8 @@ public protocol FormRowValueTypeAccessible {
 
 public extension FormRowValueTypeAccessible where Self: FormBaseCell {
     
-    /// Value with type specified in the protocol
-    var trueRowValue: ValueType? {
+    /// Value casted with type specified in the protocol
+    var rowValue: ValueType? {
         if let value = self.row?.value {
             if let typedValue = value as? ValueType {
                 return typedValue
