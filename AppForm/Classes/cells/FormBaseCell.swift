@@ -61,23 +61,29 @@ open class FormBaseCell: UITableViewCell {
 }
 
 /// Specifying type of value of Row to access it conveniently through 'rowValue'
-public protocol FormRowValueTypeAccessible {
+public protocol FormRowValueTypeAccessible: class {
     associatedtype ValueType
 }
 
 public extension FormRowValueTypeAccessible where Self: FormBaseCell {
     
-    /// Value casted with type specified in the protocol
+    /// Row value with type specified in the protocol. 
+    /// Convenient for casting row's value to the specified type inside FormBaseCell.
     var rowValue: ValueType? {
-        if let value = self.row?.value {
-            if let typedValue = value as? ValueType {
-                return typedValue
+        get {
+            if let value = self.row?.value {
+                if let typedValue = value as? ValueType {
+                    return typedValue
+                } else {
+                    assertionFailure("Wrong ValueType. Expect '\(ValueType.self)', but found '\(type(of: value))'.")
+                    return nil
+                }
             } else {
-                assertionFailure("Wrong ValueType. Expect '\(ValueType.self)', but found '\(type(of: value))'.")
                 return nil
             }
-        } else {
-            return nil
+        }
+        set {
+            self.row?.value = newValue
         }
     }
 }
