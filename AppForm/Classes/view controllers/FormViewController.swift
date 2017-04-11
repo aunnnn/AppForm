@@ -56,7 +56,6 @@ open class FormViewController: UIViewController {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnTableView))
             tapGesture.numberOfTapsRequired = 1
             tableView.addGestureRecognizer(tapGesture)
-            
             tableView.dataSource = self
             tableView.delegate = self
             
@@ -145,7 +144,6 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         do /* Appearances */ {
             row.cellAppearanceConfiguration.setupBlock?(cell)
         }
-        
         cell.formViewController = self
         cell.row = row
         return cell
