@@ -1,6 +1,6 @@
 //
 //  FormRow+AppearanceSource.swift
-//  AForm
+//  AppForm
 //
 //  Created by Wirawit Rueopas on 4/10/2560 BE.
 //  Copyright © 2560 Wirawit Rueopas. All rights reserved.
@@ -8,6 +8,7 @@
 
 /// Configure cell styles. Conforms to this with enum.
 public protocol FormRowAppearanceSource {
+    /// Configure appearances.
     func configure(cell: FormBaseCell) -> Void
 }
 
@@ -21,12 +22,8 @@ public extension FormRowAppearanceSource {
 }
 
 public extension FormRow {
-    /// Apply styles on FormRow.
-    public func styles(as style: FormRowAppearanceSource) -> FormRow {
-        self.cellAppearanceConfiguration.setupBlock = style.configure
-        return self
-    }
-    
+
+    /// Set separator styles.
     public func separator(style: CellAppearanceConfiguration.SeparatorStyle) -> FormRow {
         self.cellAppearanceConfiguration.separatorStyle = style
         return self
