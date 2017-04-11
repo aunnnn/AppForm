@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30C33A091E9D6DBA000C4961 /* ViewController+ViewSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33A081E9D6DBA000C4961 /* ViewController+ViewSources.swift */; };
 		30D5BA5B1E9D555E00351FE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5BA4D1E9D555E00351FE5 /* AppDelegate.swift */; };
 		30D5BA5C1E9D555E00351FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA4E1E9D555E00351FE5 /* Assets.xcassets */; };
 		30D5BA5D1E9D555E00351FE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D5BA4F1E9D555E00351FE5 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		302B71DC1E9B8EAA000672C0 /* TryAppForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryAppForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C33A081E9D6DBA000C4961 /* ViewController+ViewSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ViewSources.swift"; sourceTree = "<group>"; };
 		30D5BA4D1E9D555E00351FE5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30D5BA4E1E9D555E00351FE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D5BA501E9D555E00351FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				30D5BA711E9D5A3700351FE5 /* Cells */,
 				30D5BA551E9D555E00351FE5 /* Info.plist */,
 				30D5BA5A1E9D555E00351FE5 /* ViewController.swift */,
+				30C33A081E9D6DBA000C4961 /* ViewController+ViewSources.swift */,
 			);
 			path = TryAppForm;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				30D5BA661E9D555E00351FE5 /* ViewController.swift in Sources */,
 				30D5BA5B1E9D555E00351FE5 /* AppDelegate.swift in Sources */,
+				30C33A091E9D6DBA000C4961 /* ViewController+ViewSources.swift in Sources */,
 				30D5BA781E9D5A3700351FE5 /* CenteredButtonFormCell.swift in Sources */,
 				30D5BA7A1E9D5A3700351FE5 /* LabelFormCell.swift in Sources */,
 				30D5BA7C1E9D5A3700351FE5 /* TextFieldFormCell.swift in Sources */,
