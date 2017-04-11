@@ -53,6 +53,9 @@ public extension FormRow {
         
         public enum SeparatorStyle {
             case none
+            
+            /// left 8, right 8
+            case `default`
             case fullWidth
         }
         

@@ -43,6 +43,8 @@ open class FormBaseCell: UITableViewCell {
             self.separatorInset = UIEdgeInsets(top: 0, left: self.bounds.size.width, bottom: 0, right: 0)
         case .fullWidth:
             self.separatorInset = UIEdgeInsets.zero
+        case .default:
+            self.separatorInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         }
     }
     
