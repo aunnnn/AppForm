@@ -47,14 +47,10 @@ open class FormBaseCell: UITableViewCell {
     }
     
     /// Setup views, called only once.
-    open func configure() {
-
-    }
+    open func configure() {}
     
     /// Update cell with a new row descriptor.
-    open func update() {
-        
-    }
+    open func update() {}
 
     /// Element to become active on cell tap.
     open func firstResponderElement() -> UIResponder? {
