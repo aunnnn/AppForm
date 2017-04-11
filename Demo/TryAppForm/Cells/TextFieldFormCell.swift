@@ -15,8 +15,15 @@ class TextFieldFormCell: FormBaseCell, FormRowValueTypeAccessible {
 
     @IBOutlet weak var textField: UITextField!
     
+    override func configure() {
+        textField.addTarget(self, action: #selector(self.valueChanged), for: .editingChanged)
+    }
+    
     override func update() {
         textField.text = self.rowValue
     }
     
+    func valueChanged() {
+        self.rowValue = textField.text
+    }
 }
