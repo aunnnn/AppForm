@@ -27,6 +27,9 @@ open class FormViewController: UIViewController {
     
     public var hidesTrailingEmptyRowSeparators = true
     
+    private var previousTableViewContentInset: UIEdgeInsets?
+    private weak var previousActiveResponder: UIResponder?
+    
     public func getRow(indexPath: IndexPath) -> FormRow {
         return form.sections[indexPath.section].rows[indexPath.row]
     }
@@ -43,7 +46,6 @@ open class FormViewController: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.registerForKeyboardNotifications()
         
         do {
@@ -81,21 +83,28 @@ open class FormViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        // if keyboard is up for the first time
+        // E.g., tapping other textfields while keyboard was shown will also trigger this notification.
+        guard previousActiveResponder == nil else { return }
         guard let info = notification.userInfo else { return }
         guard let kbFrame = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        do /* Adjust tableview's inset */ {
-            let keyboardFrame = tableView.convert(kbFrame, from: nil)
-            let intersection = keyboardFrame.intersection(tableView.bounds)
-            guard !intersection.isNull else { return }
-            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + 8, right: 0)
-            self.tableView.contentInset = contentInsets
-            self.tableView.scrollIndicatorInsets = contentInsets
-        }
+        guard let responderView = UIResponder.firstResponder() else { return }
+        
+        /* Adjust tableview's inset */
+        previousActiveResponder = responderView
+        let keyboardFrame = tableView.convert(kbFrame, from: nil)
+        let intersection = keyboardFrame.intersection(tableView.bounds)
+        guard !intersection.isNull else { return }
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + 8, right: 0)
+        self.previousTableViewContentInset = self.tableView.contentInset
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
+        self.previousActiveResponder = nil
         UIView.animate(withDuration: 0.2) {
-            self.tableView.contentInset = .zero
+            self.tableView.contentInset = self.previousTableViewContentInset ?? .zero
             self.tableView.scrollIndicatorInsets = .zero
         }
     }
@@ -171,4 +180,20 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         guard hidesKeyboardOnScroll else { return }
         self.view.endEditing(true)
     }
+}
+
+private weak var currentFirstResponder: UIResponder?
+
+extension UIResponder {
+    
+    static func firstResponder() -> UIResponder? {
+        currentFirstResponder = nil
+        UIApplication.shared.sendAction(#selector(self.findFirstResponder(sender:)), to: nil, from: nil, for: nil)
+        return currentFirstResponder
+    }
+    
+    func findFirstResponder(sender: AnyObject) {
+        currentFirstResponder = self
+    }
+    
 }
