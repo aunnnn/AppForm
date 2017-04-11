@@ -14,6 +14,7 @@ open class FormBaseCell: UITableViewCell {
     public var row: FormRow? {
         didSet {
             self.update()
+            self.layoutIfNeeded()
         }
     }
     
@@ -32,11 +33,6 @@ open class FormBaseCell: UITableViewCell {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.configure()
-    }
-    
-    open override func didMoveToSuperview() {
-        // This fixes wrong layout on first load.
-        self.layoutIfNeeded()
     }
     
     open override func layoutSubviews() {
