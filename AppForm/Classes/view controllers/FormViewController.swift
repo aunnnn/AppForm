@@ -1,6 +1,6 @@
 //
 //  FormViewController.swift
-//  AForm
+//  AppForm
 //
 //  Created by Wirawit Rueopas on 4/8/2560 BE.
 //  Copyright © 2560 Wirawit Rueopas. All rights reserved.
@@ -14,11 +14,7 @@ open class FormViewController: UIViewController {
     
     fileprivate var registeredNibs: [String] = []
     
-    public var form = Form() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    public var form = Form()
     
     /// If true (default), each FormRow's estimatedRowHeight will be updated with actual value after displaying the cell.
     public var updateEstimatedRowHeights = true
@@ -28,6 +24,8 @@ open class FormViewController: UIViewController {
     
     /// If true (default), table view will hides keyboard on tap.
     public var hidesKeyboardOnTap = true
+    
+    public var hidesTrailingEmptyRowSeparators = true
     
     public func getRow(indexPath: IndexPath) -> FormRow {
         return form.sections[indexPath.section].rows[indexPath.row]
@@ -62,7 +60,9 @@ open class FormViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
             
-            tableView.layoutIfNeeded()
+            if hidesTrailingEmptyRowSeparators {
+                tableView.tableFooterView = UIView(frame: .zero)
+            }
         }
     }
     
@@ -83,10 +83,12 @@ open class FormViewController: UIViewController {
     
     @objc private func keyboardWillShow(notification: Notification) {
         guard let info = notification.userInfo else { return }
-        guard let kbSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else { return }        
-        
+        guard let kbFrame = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         do /* Adjust tableview's inset */ {
-            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.height + 8, right: 0)
+            let keyboardFrame = tableView.convert(kbFrame, from: nil)
+            let intersection = keyboardFrame.intersection(tableView.bounds)
+            guard !intersection.isNull else { return }
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: intersection.height + 8, right: 0)
             self.tableView.contentInset = contentInsets
             self.tableView.scrollIndicatorInsets = contentInsets
         }
@@ -160,7 +162,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         return row.cellLayoutConfiguration.rowHeight
     }
     
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {        
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard updateEstimatedRowHeights else { return }
         let row = getRow(indexPath: indexPath)
         let newEstimatedHeight = cell.bounds.height
