@@ -1,6 +1,6 @@
 //
 //  Form.swift
-//  Form
+//  AppForm
 //
 //  Created by Wirawit Rueopas on 4/8/2560 BE.
 //  Copyright © 2560 Wirawit Rueopas. All rights reserved.
@@ -33,5 +33,16 @@ public class Form {
             }
         }
         return formValues
+    }
+    
+    public func row(withTag tag: String) -> FormRow? {
+        for s in sections {
+            for r in s.rows {
+                if r.tag == tag {
+                    return r
+                }
+            }
+        }
+        return nil
     }
 }
