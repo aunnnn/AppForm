@@ -36,7 +36,6 @@ public protocol FormRowCellSource {
     var with: (cellClass: FormBaseCell.Type, nibName: String?) { get }
 }
 
-
 // MARK:- Configurations
 public extension FormRow {
     
@@ -63,5 +62,26 @@ public extension FormRow {
         public init() {
             self.separatorStyle = .none
         }
+    }
+}
+
+// MARK:- Utilities
+
+fileprivate struct SpacingRowCellSource: FormRowCellSource {
+    var with: (cellClass: FormBaseCell.Type, nibName: String?) {
+        return (FormBaseCell.self, nil)
+    }
+}
+
+fileprivate let spacingRowCellSource = SpacingRowCellSource()
+
+public extension FormRow {
+    
+    /// Return empty FormRow with specified rowHeight (plain FormBaseCell). Ideal for vertical spacing.
+    static func spacing(height: CGFloat) -> FormRow {
+        let row = FormRow(tag: "_spacing\(height)", cellSource: spacingRowCellSource)
+        row.cellLayoutConfiguration.rowHeight = height
+        row.cellLayoutConfiguration.estimatedRowHeight = height
+        return row
     }
 }
