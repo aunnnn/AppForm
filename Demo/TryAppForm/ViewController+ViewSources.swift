@@ -33,6 +33,7 @@ extension ViewController {
         case Logo
         case LoginButton, RegisterButton
         case UsernameTextField, PasswordTextField
+        case Note
         
         func configure(cell: FormBaseCell, row: FormRow) {
             
@@ -71,6 +72,10 @@ extension ViewController {
                 case .Logo:
                     cell.label.font = UIFont.systemFont(ofSize: 30)
                     cell.label.textAlignment = .center
+                case .Note:
+                    cell.label.font = UIFont.systemFont(ofSize: 12)
+                    cell.label.textAlignment = .center
+                    cell.label.numberOfLines = 0
                 default:
                     assertionFailure("Invalid cell type.")
                 }
