@@ -57,7 +57,7 @@ public extension FormRow {
         }
         
         public var separatorStyle: SeparatorStyle
-        public var setupBlock: ((FormBaseCell) -> Void)? = nil
+        public var setupBlock: ((FormBaseCell, FormRow) -> Void)? = nil
         
         public init() {
             self.separatorStyle = .none

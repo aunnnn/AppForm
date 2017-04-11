@@ -9,7 +9,7 @@
 /// Configure cell styles. Conforms to this with enum.
 public protocol FormRowAppearanceSource {
     /// Configure appearances.
-    func configure(cell: FormBaseCell) -> Void
+    func configure(cell: FormBaseCell, row: FormRow) -> Void
 }
 
 // Belows are just syntatic sugar to set value

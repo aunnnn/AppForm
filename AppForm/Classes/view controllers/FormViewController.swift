@@ -22,10 +22,16 @@ open class FormViewController: UIViewController {
     /// If true, the keyboard will be hidden on table view scroll. Default is false.
     public var hidesKeyboardOnScroll = false
     
-    /// If true (default), table view will hides keyboard on tap.
+    /// If true (default), tableview will hides keyboard on tap.
     public var hidesKeyboardOnTap = true
     
+    /// If true (default), tableview will hide trailing empty cells separators.
     public var hidesTrailingEmptyRowSeparators = true
+    
+    /// If true, will adjust tableview insets to make its content at the center.
+    /// Note that if contentSize is more than tableview's bound, it will reset to insets with all zeros.
+    /// Default is false.
+    public var centersContentIfPossible = false
     
     private var previousTableViewContentInset: UIEdgeInsets?
     private weak var previousActiveResponder: UIResponder?
@@ -74,6 +80,31 @@ open class FormViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: Centering Content
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard centersContentIfPossible else { return }
+        self.centerTableView(with: self.view.bounds.size)
+    }
+    
+    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        guard centersContentIfPossible else { return }
+        self.centerTableView(with: size)
+    }
+    
+    private func centerTableView(with tableSize: CGSize) {
+        let tableVerticalInset = (tableSize.height - self.tableView.contentSize.height)/2
+        if tableVerticalInset < 0 {
+            self.tableView.contentInset = .zero
+            return
+        }
+        let inset = UIEdgeInsets(top: tableVerticalInset,
+                                 left: 0,
+                                 bottom: tableVerticalInset,
+                                 right: 0)
+        self.tableView.contentInset = inset
     }
     
     // MARK: Keyboard Notifications
@@ -151,7 +182,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         do /* Appearances */ {
-            row.cellAppearanceConfiguration.setupBlock?(cell)
+            row.cellAppearanceConfiguration.setupBlock?(cell, row)
         }
         cell.formViewController = self
         cell.row = row
